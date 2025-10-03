@@ -7,11 +7,22 @@
     <title>Shakij Mahamud- Portfolio</title>
     <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
 
+
+    <!--! New font -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+
+
+    <!--! Regular font -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
+        rel="stylesheet"> -->
+
+
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -21,7 +32,8 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        "inter": ["Inter", "sans-serif"],
+                        "kalam": ["kalam", "cursive"],
+                        // "inter": ["Inter", "sans-serif"],
                     },
                     colors: {
                         body_main: "#EDF2FB",
@@ -37,7 +49,7 @@
     </script>
 </head>
 
-<body class="font-inter bg-body_main">
+<body class="font-kalam bg-body_main">
     <header class="max-w-7xl mx-auto ">
         <nav>
             <div class="navbar bg-">
@@ -266,7 +278,7 @@
                 in MERN stack development and
                 frontend technologies.</p>
 
-            <div class="mt-5 ">
+            <!-- <div class="mt-5 ">
                 <label class="input input-lg lg:w-4/12 rounded-full drop-shadow-lg  ">
                     <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none"
@@ -277,7 +289,24 @@
                     </svg>
                     <input type="search" required placeholder="Search" />
                 </label>
+            </div> -->
+
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 mt-5">
+
+                <div class="bg-soft_trasparet_vibe border border-black/25 drop-shadow-lg shadow-lg rounded-lg  p-6 ">
+                    <img class="rounded-md" src="./assets/images/project_homefinder.png" alt="">
+                    <h2 class="text-xl font-bold mt-4">HomeFinder</h2>
+                    <p class="text-base mt-2">A modern real estate website for browsing, listing, and managing
+                        properties and an intuitive user
+                        experience.</p>
+                    <a class="btn bg-btn_main rounded-full px-7 text-base mt-3"
+                        href="https://homes-finder.vercel.app/">Live</a>
+                </div>
+
             </div>
+
+
         </div>
 
     </main>
