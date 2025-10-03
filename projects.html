@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shakij Mahamud- Portfolio</title>
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+
+
+    <!--! New font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+
+
+    <!--! Regular font -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet"> -->
+
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://kit.fontawesome.com/779bd03c20.js" crossorigin="anonymous"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        "kalam": ["kalam", "cursive"],
+                        // "inter": ["Inter", "sans-serif"],
+                    },
+                    colors: {
+                        body_main: "#EDF2FB",
+                        btn_main: "#89C2D9",
+                        btn_hover: "#9CB3E9",
+                        trasparet_vibe: "#D7E3FC",
+                        soft_trasparet_vibe: "#EDF2FB",
+                        icon_bg: "#2C3C62",
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-kalam bg-body_main">
+    <header class="max-w-7xl mx-auto ">
+        <nav>
+            <div class="navbar bg-">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            <li class=""><a href="index.html">Home</a></li>
+                            <li><a>About</a></li>
+                            <li><a>Skills</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+
+                        </ul>
+
+                    </div>
+                    <div>
+                        <img class="w-40" src="./assets/images/logo_1.png" alt="">
+                    </div>
+                </div>
+                <div class="navbar-end hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1 text-base font-medium">
+                        <li class=""><a href="index.html">Home</a></li>
+                        <li><a>About</a></li>
+                        <li><a>Skills</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+
+                    </ul>
+                    <a class="btn bg-btn_main hover:bg-btn_hover transition duration-200 rounded-full "> <i
+                            class="fa-solid fa-arrow-down"></i> Download CV</a>
+                </div>
+                <div class="navbar-end lg:hidden">
+
+                    <a class="btn bg-btn_main hover:bg-btn_hover transition duration-200 rounded-full"><i
+                            class="fa-solid fa-arrow-down"></i> Download CV</a>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto">
+        <!-- projects section -->
+
+        <div class="mt-5 p-3">
+            <h2 class="text-3xl font-bold">Projects</h2>
+            <p class="text-lg text-black/85 mt-2">Explore a selection of my most impactful projects, showcasing my
+                expertise
+                in MERN stack development and
+                frontend technologies.</p>
+
+            <div class="mt-5 ">
+                <label
+                    class="input input-lg lg:w-4/12 bg-soft_trasparet_vibe border border-black/25 hover:border-none rounded-full drop-shadow-lg  ">
+                    <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none"
+                            stroke="currentColor">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.3-4.3"></path>
+                        </g>
+                    </svg>
+                    <input class="placeholder:text-black/65" type="search" required placeholder="Search" />
+                </label>
+            </div>
+
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-5">
+
+                <div class="bg-soft_trasparet_vibe border border-black/25 drop-shadow-lg shadow-lg rounded-lg  p-6 ">
+                    <img class="rounded-md hover:scale-110 duration-300 transition"
+                        src="./assets/images/project_portfolio.png" alt="">
+                    <h2 class="text-xl font-bold mt-4">Portfolio Site</h2>
+                    <p class="text-base mt-2">My personal site and portfolio highlighting my journey as a web developer.
+                    </p>
+                    <a class="btn bg-btn_main rounded-full px-7 text-base mt-3"
+                        href="https://shakij-site.vercel.app/">Live</a>
+                </div>
+
+
+                <div class="bg-soft_trasparet_vibe border border-black/25 drop-shadow-lg shadow-lg rounded-lg  p-6 ">
+                    <img class="rounded-md hover:scale-110 duration-300 transition"
+                        src="./assets/images/project_flowerzone.png" alt="">
+                    <h2 class="text-xl font-bold mt-4">Flower Zone</h2>
+                    <p class="text-base mt-2">Flower Zone is an online flower shop offering fresh, beautiful blooms and
+                        plants with elegant designs and affordable deals.</p>
+                    <a class="btn bg-btn_main rounded-full px-7 text-base mt-3"
+                        href="https://flower-zone.vercel.app/">Live</a>
+                </div>
+
+
+
+                <div class="bg-soft_trasparet_vibe border border-black/25 drop-shadow-lg shadow-lg rounded-lg  p-6 ">
+                    <img class="rounded-md hover:scale-110 duration-300 transition"
+                        src="./assets/images/project_homefinder.png" alt="">
+                    <h2 class="text-xl font-bold mt-4">HomeFinder</h2>
+                    <p class="text-base mt-2">A modern real estate website for browsing, listing, and managing
+                        properties and an intuitive user
+                        experience.</p>
+                    <a class="btn bg-btn_main rounded-full px-7 text-base mt-3"
+                        href="https://homes-finder.vercel.app/">Live</a>
+                </div>
+
+
+
+                <div class="bg-soft_trasparet_vibe border border-black/25 drop-shadow-lg shadow-lg rounded-lg  p-6 ">
+                    <img class="rounded-md hover:scale-110 duration-300 transition"
+                        src="./assets/images/project_influencer-gear.png" alt="">
+                    <h2 class="text-xl font-bold mt-4">Influencer Gear </h2>
+                    <p class="text-base mt-2">Influencer Gear offers cameras and accessories every creator needs for
+                        daily content creation.</p>
+                    <a class="btn bg-btn_main rounded-full px-7 text-base mt-3" href="#">Live</a>
+                </div>
+
+
+
+                <div class="bg-soft_trasparet_vibe border border-black/25 drop-shadow-lg shadow-lg rounded-lg  p-6 ">
+                    <img class="rounded-md hover:scale-110 duration-300 transition"
+                        src="./assets/images/project_legal-solution.png" alt="">
+                    <h2 class="text-xl font-bold mt-4">Legal Solution</h2>
+                    <p class="text-base mt-2">Legal Solution delivers clear, reliable, and accessible legal support for
+                        individuals and businesses.</p>
+                    <a class="btn bg-btn_main rounded-full px-7 text-base mt-3" href="#">Live</a>
+                </div>
+
+            </div>
+
+
+        </div>
+    </main>
+
+</body>
+
+</html>
