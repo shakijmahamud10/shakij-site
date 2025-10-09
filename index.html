@@ -42,6 +42,7 @@
                         trasparet_vibe: "#D7E3FC",
                         soft_trasparet_vibe: "#EDF2FB",
                         icon_bg: "#2C3C62",
+                        slider: "#EDF2FB",
                     }
                 }
             }
@@ -443,24 +444,57 @@
         </div>
 
         <div class="mt-3 p-5 lg:p-3 ">
-            <div class="carousel h-52 lg:h-auto lg:w-full  rounded-lg">
+            <div class="carousel h-60 lg:h-auto lg:w-full border  border-black/25 drop-shadow-lg shadow-lg  rounded-xl">
                 <div id="slide1" class="carousel-item relative w-full">
-                    <img src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp"
-                        class="w-full" />
 
-                    <div class=" absolute flex justify-center items-center inset-0">
+                    <div class="w-full bg-slider   ">
+                        <div class=" absolute flex justify-center items-center inset-0 p-14 lg:p-20">
 
-                        <h2 class="text-2xl text-white bg-black/20 backdrop-blur-sm font-bold p-5 rounded-lg ">
-                            <img class="w-16 h-16 rounded-full mx-auto" src="./assets/images/project_flowerzone.png"
-                                alt="">
-                            Hello world
-                        </h2>
+                            <div class="lg:p-5 rounded-lg">
+
+                                <img class="w-16 h-16 lg:w-24 lg:h-24 rounded-full mx-auto "
+                                    src="./assets/images/Vector/c1.png" alt="">
+
+                                <h2 class="text-lg lg:text-2xl font-bold text-center mt-3">Emily Carter</h2>
+
+                                <div class="flex justify-center items-center lg:mt-2 ">
+                                    <div class="rating rating-xs lg:rating-sm ">
+                                        <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400"
+                                            aria-label="1 star" />
+                                        <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400"
+                                            aria-label="2 star" />
+                                        <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400"
+                                            aria-label="3 star" />
+                                        <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400"
+                                            aria-label="4 star" />
+                                        <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400"
+                                            aria-label="5 star" checked="checked" />
+                                    </div>
+                                </div>
+
+                                <h2 class="text-xs lg:text-2xl text-black/75  font-bold lg:p-5 rounded-lg mt-3  ">
+
+                                    "Working with Shakij was a fantastic experience. Their team was responsive,
+                                    creative,
+                                    and
+                                    delivered a product that perfectly met our needs. I highly recommend their
+                                    services."
+                                </h2>
+                            </div>
+
+
+                        </div>
+
                     </div>
+
+
                     <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
                         <a href="#slide4" class="btn btn-circle">❮</a>
                         <a href="#slide2" class="btn btn-circle">❯</a>
                     </div>
                 </div>
+
+
                 <div id="slide2" class="carousel-item relative w-full">
                     <img src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp"
                         class="w-full" />
@@ -469,6 +503,10 @@
                         <a href="#slide3" class="btn btn-circle">❯</a>
                     </div>
                 </div>
+
+
+
+
                 <div id="slide3" class="carousel-item relative w-full">
                     <img src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.webp"
                         class="w-full" />
