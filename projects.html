@@ -1,190 +1,478 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shakij Mahamud- Portfolio</title>
+    <title>Projects - Shakij Mahamud</title>
     <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
 
-
-    <!--! New font -->
-
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
-
-
-    <!--! Regular font -->
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet"> -->
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Kalam:wght@300;400;700&display=swap"
+        rel="stylesheet">
 
-
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <!-- DaisyUI & Tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/779bd03c20.js" crossorigin="anonymous"></script>
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        "kalam": ["kalam", "cursive"],
-                        // "inter": ["Inter", "sans-serif"],
+                        "outfit": ["Outfit", "sans-serif"],
+                        "kalam": ["Kalam", "cursive"],
                     },
                     colors: {
-                        body_main: "#EDF2FB",
-                        btn_main: "#89C2D9",
-                        btn_hover: "#9CB3E9",
-                        trasparet_vibe: "#D7E3FC",
-                        soft_trasparet_vibe: "#EDF2FB",
-                        icon_bg: "#2C3C62",
+                        primary: "#2563EB", // Blue 600
+                        secondary: "#9333EA", // Purple 600
+                        accent: "#4F46E5", // Indigo 600
+                        dark: "#1F2937",
+                        light: "#F3F4F6",
                     }
                 }
             }
         }
     </script>
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #2563EB, #9333EA);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .project-card {
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+
+        .project-image {
+            transition: transform 0.5s ease;
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(to right, #2563EB, #9333EA);
+            color: white;
+        }
+    </style>
 </head>
 
-<body class="font-kalam bg-body_main">
-    <header class="max-w-7xl mx-auto ">
-        <nav>
-            <div class="navbar bg-">
-                <div class="navbar-start">
-                    <div class="dropdown">
-                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M4 6h16M4 12h8m-8 6h16" />
-                            </svg>
-                        </div>
-                        <ul tabindex="0"
-                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <li class=""><a href="index.html">Home</a></li>
-                            <li><a>About</a></li>
-                            <li><a>Skills</a></li>
-                            <li><a href="projects.html">Projects</a></li>
+<body class="font-outfit bg-slate-50 text-gray-800 antialiased selection:bg-blue-100 selection:text-blue-700">
 
-                        </ul>
-
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto navbar px-4 lg:px-8 py-3">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
                     </div>
-                    <div>
-                        <a href="./index.html"><img class="w-40" src="./assets/images/logo_1.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="navbar-end hidden lg:flex">
-                    <ul class="menu menu-horizontal px-1 text-base font-medium">
-                        <li class=""><a href="index.html">Home</a></li>
-                        <li><a>About</a></li>
-                        <li><a>Skills</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-lg bg-white rounded-box w-52 border border-gray-100">
+                        <li><a href="index.html" class="font-medium hover:text-primary">Home</a></li>
+                        <li><a href="index.html#about" class="font-medium hover:text-primary">About</a></li>
+                        <li><a href="index.html#skills" class="font-medium hover:text-primary">Skills</a></li>
+                        <li><a href="projects.html" class="font-medium hover:text-primary">Projects</a></li>
+                        <li><a href="index.html#contact" class="font-medium hover:text-primary">Contact</a></li>
                     </ul>
-                    <a class="btn bg-btn_main hover:bg-btn_hover transition duration-200 rounded-full "> <i
-                            class="fa-solid fa-arrow-down"></i> Download CV</a>
                 </div>
-                <div class="navbar-end lg:hidden">
-
-                    <a class="btn bg-btn_main hover:bg-btn_hover transition duration-200 rounded-full"><i
-                            class="fa-solid fa-arrow-down"></i> Download CV</a>
-
-                </div>
+                <a href="./index.html" class="text-2xl font-bold tracking-tight">
+                    SHAKIJ<span class="text-primary">.dev</span>
+                </a>
             </div>
-        </nav>
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1 gap-2">
+                    <li><a href="index.html"
+                            class="font-medium hover:bg-blue-50 hover:text-primary rounded-full px-5 transition-colors">Home</a>
+                    </li>
+                    <li><a href="index.html#about"
+                            class="font-medium hover:bg-blue-50 hover:text-primary rounded-full px-5 transition-colors">About</a>
+                    </li>
+                    <li><a href="index.html#skills"
+                            class="font-medium hover:bg-blue-50 hover:text-primary rounded-full px-5 transition-colors">Skills</a>
+                    </li>
+                    <li><a href="projects.html"
+                            class="font-medium bg-blue-50 text-primary rounded-full px-5 transition-colors">Projects</a>
+                    </li>
+                    <li><a href="index.html#contact"
+                            class="font-medium hover:bg-blue-50 hover:text-primary rounded-full px-5 transition-colors">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-end">
+                <a href="#"
+                    class="btn bg-gradient-to-r from-primary to-accent hover:from-blue-700 hover:to-indigo-700 text-white border-none rounded-full px-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+                    Download CV <i class="fa-solid fa-download ml-2"></i>
+                </a>
+            </div>
+        </div>
     </header>
 
-    <main class="max-w-7xl mx-auto">
-        <!-- projects section -->
+    <main class="max-w-7xl mx-auto px-4 lg:px-8">
 
-        <div class="mt-5 p-3">
-            <h2 class="text-3xl font-bold">Projects</h2>
-            <p class="text-lg text-black/85 mt-2">Explore a selection of my most impactful projects, showcasing my
-                expertise
-                in MERN stack development and
-                frontend technologies.</p>
-
-            <div class="mt-5 ">
-                <label
-                    class="input input-lg lg:w-4/12 bg-soft_trasparet_vibe border border-black/25 hover:border-none rounded-full drop-shadow-lg  ">
-                    <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none"
-                            stroke="currentColor">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.3-4.3"></path>
-                        </g>
-                    </svg>
-                    <input class="placeholder:text-black/65" type="search" required placeholder="Search" />
-                </label>
+        <!-- Hero Section -->
+        <section class="py-16 lg:py-20">
+            <div class="text-center max-w-4xl mx-auto">
+                <span class="text-primary font-semibold tracking-wider uppercase text-sm">Portfolio</span>
+                <h1 class="text-4xl lg:text-6xl font-extrabold text-gray-900 mt-3 mb-6">
+                    My <span class="gradient-text">Projects</span>
+                </h1>
+                <p class="text-lg lg:text-xl text-gray-600 leading-relaxed">
+                    Explore a collection of my work showcasing expertise in <span
+                        class="text-primary font-semibold">MERN stack</span>, <span
+                        class="text-secondary font-semibold">modern frameworks</span>, and <span
+                        class="text-accent font-semibold">responsive design</span>.
+                </p>
             </div>
+        </section>
 
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-5">
-
-                <div class="bg-soft_trasparet_vibe border border-black/25 drop-shadow-lg shadow-lg rounded-lg  p-6 ">
-                    <img class="rounded-md hover:scale-110 duration-300 transition"
-                        src="./assets/images/project_portfolio.png" alt="">
-                    <h2 class="text-xl font-bold mt-4">Portfolio Site</h2>
-                    <p class="text-base mt-2">My personal site and portfolio highlighting my journey as a web developer.
-                    </p>
-                    <a class="btn bg-btn_main rounded-full px-7 text-base mt-3"
-                        href="https://shakij-site.vercel.app/">Live</a>
+        <!-- Filter & Search Section -->
+        <section class="pb-12">
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-6">
+                <!-- Category Filters -->
+                <div class="flex flex-wrap justify-center lg:justify-start gap-3">
+                    <button
+                        class="filter-btn active px-6 py-2.5 rounded-full font-semibold bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all duration-300"
+                        data-filter="all">
+                        All Projects
+                    </button>
+                    <button
+                        class="filter-btn px-6 py-2.5 rounded-full font-semibold bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all duration-300"
+                        data-filter="react">
+                        React
+                    </button>
+                    <button
+                        class="filter-btn px-6 py-2.5 rounded-full font-semibold bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all duration-300"
+                        data-filter="mern">
+                        MERN Stack
+                    </button>
+                    <button
+                        class="filter-btn px-6 py-2.5 rounded-full font-semibold bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all duration-300"
+                        data-filter="html">
+                        HTML/CSS
+                    </button>
                 </div>
 
+                <!-- Search Bar -->
+                <div class="relative w-full lg:w-96">
+                    <input type="search" placeholder="Search projects..."
+                        class="input input-bordered w-full rounded-full pl-12 pr-6 bg-white border-gray-200 focus:border-primary focus:ring-2 focus:ring-blue-200 transition-all">
+                    <i class="fa-solid fa-magnifying-glass absolute left-5 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                </div>
+            </div>
+        </section>
 
-                <div class="bg-soft_trasparet_vibe border border-black/25 drop-shadow-lg shadow-lg rounded-lg  p-6 ">
-                    <img class="rounded-md hover:scale-110 duration-300 transition"
-                        src="./assets/images/project_flowerzone.png" alt="">
-                    <h2 class="text-xl font-bold mt-4">Flower Zone</h2>
-                    <p class="text-base mt-2">Flower Zone is an online flower shop offering fresh, beautiful blooms and
-                        plants with elegant designs and affordable deals.</p>
-                    <a class="btn bg-btn_main rounded-full px-7 text-base mt-3"
-                        href="https://flower-zone.vercel.app/">Live</a>
+        <!-- Projects Grid -->
+        <section class="pb-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+
+                <!-- Project Card 1 -->
+                <div class="project-card bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl group"
+                    data-category="html">
+                    <div class="relative overflow-hidden h-64">
+                        <img class="project-image w-full h-full object-contain bg-gray-50"
+                            src="./assets/images/project_portfolio.png" alt="Portfolio">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4">
+                            <a href="https://shakij-site.vercel.app/" target="_blank"
+                                class="btn btn-sm bg-white text-gray-900 border-none hover:bg-primary hover:text-white transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                <i class="fa-solid fa-eye mr-2"></i>Live Demo
+                            </a>
+                            <a href="#"
+                                class="btn btn-sm bg-gray-800 text-white border-none hover:bg-gray-900 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                <i class="fa-brands fa-github mr-2"></i>View Code
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Portfolio Site</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">My personal site and portfolio highlighting my
+                            journey as a web developer.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-semibold">HTML</span>
+                            <span
+                                class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-semibold">Tailwind</span>
+                            <span
+                                class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-semibold">DaisyUI</span>
+                        </div>
+                    </div>
                 </div>
 
-
-
-                <div class="bg-soft_trasparet_vibe border border-black/25 drop-shadow-lg shadow-lg rounded-lg  p-6 ">
-                    <img class="rounded-md hover:scale-110 duration-300 transition"
-                        src="./assets/images/project_homefinder.png" alt="">
-                    <h2 class="text-xl font-bold mt-4">HomeFinder</h2>
-                    <p class="text-base mt-2">A modern real estate website for browsing, listing, and managing
-                        properties and an intuitive user
-                        experience.</p>
-                    <a class="btn bg-btn_main rounded-full px-7 text-base mt-3"
-                        href="https://homes-finder.vercel.app/">Live</a>
+                <!-- Project Card 2 -->
+                <div class="project-card bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl group"
+                    data-category="react">
+                    <div class="relative overflow-hidden h-64">
+                        <img class="project-image w-full h-full object-contain bg-gray-50"
+                            src="./assets/images/project_flowerzone.png" alt="Flower Zone">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4">
+                            <a href="https://flower-zone.vercel.app/" target="_blank"
+                                class="btn btn-sm bg-white text-gray-900 border-none hover:bg-primary hover:text-white transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                <i class="fa-solid fa-eye mr-2"></i>Live Demo
+                            </a>
+                            <a href="#"
+                                class="btn btn-sm bg-gray-800 text-white border-none hover:bg-gray-900 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                <i class="fa-brands fa-github mr-2"></i>View Code
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Flower Zone</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">Flower Zone is an online flower shop offering fresh,
+                            beautiful blooms and plants.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-purple-50 text-purple-600 rounded-full text-xs font-semibold">React</span>
+                            <span
+                                class="px-3 py-1 bg-purple-50 text-purple-600 rounded-full text-xs font-semibold">Tailwind</span>
+                            <span
+                                class="px-3 py-1 bg-purple-50 text-purple-600 rounded-full text-xs font-semibold">Vite</span>
+                        </div>
+                    </div>
                 </div>
 
-
-
-                <div class="bg-soft_trasparet_vibe border border-black/25 drop-shadow-lg shadow-lg rounded-lg  p-6 ">
-                    <img class="rounded-md hover:scale-110 duration-300 transition"
-                        src="./assets/images/project_influencer-gear.png" alt="">
-                    <h2 class="text-xl font-bold mt-4">Influencer Gear </h2>
-                    <p class="text-base mt-2">Influencer Gear offers cameras and accessories every creator needs for
-                        daily content creation.</p>
-                    <a class="btn bg-btn_main rounded-full px-7 text-base mt-3" href="#">Live</a>
+                <!-- Project Card 3 -->
+                <div class="project-card bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl group"
+                    data-category="mern">
+                    <div class="relative overflow-hidden h-64">
+                        <img class="project-image w-full h-full object-contain bg-gray-50"
+                            src="./assets/images/project_homefinder.png" alt="HomeFinder">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4">
+                            <a href="https://homes-finder.vercel.app/" target="_blank"
+                                class="btn btn-sm bg-white text-gray-900 border-none hover:bg-primary hover:text-white transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                <i class="fa-solid fa-eye mr-2"></i>Live Demo
+                            </a>
+                            <a href="#"
+                                class="btn btn-sm bg-gray-800 text-white border-none hover:bg-gray-900 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                <i class="fa-brands fa-github mr-2"></i>View Code
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">HomeFinder</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">A modern real estate website for browsing, listing,
+                            and managing properties.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full text-xs font-semibold">MERN</span>
+                            <span
+                                class="px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full text-xs font-semibold">Firebase</span>
+                            <span
+                                class="px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full text-xs font-semibold">React</span>
+                        </div>
+                    </div>
                 </div>
 
+                <!-- Project Card 4 -->
+                <div class="project-card bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl group"
+                    data-category="html">
+                    <div class="relative overflow-hidden h-64">
+                        <img class="project-image w-full h-full object-contain bg-gray-50"
+                            src="./assets/images/project_influencer-gear.png" alt="Influencer Gear">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4">
+                            <a href="#" target="_blank"
+                                class="btn btn-sm bg-white text-gray-900 border-none hover:bg-primary hover:text-white transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                <i class="fa-solid fa-eye mr-2"></i>Live Demo
+                            </a>
+                            <a href="#"
+                                class="btn btn-sm bg-gray-800 text-white border-none hover:bg-gray-900 transform translate-y-2 group-group-hover:translate-y-0 transition-transform duration-300">
+                                <i class="fa-brands fa-github mr-2"></i>View Code
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Influencer Gear</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">Influencer Gear offers cameras and accessories every
+                            creator needs for daily content creation.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-green-50 text-green-600 rounded-full text-xs font-semibold">HTML</span>
+                            <span
+                                class="px-3 py-1 bg-green-50 text-green-600 rounded-full text-xs font-semibold">CSS</span>
+                            <span
+                                class="px-3 py-1 bg-green-50 text-green-600 rounded-full text-xs font-semibold">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
 
-
-                <div class="bg-soft_trasparet_vibe border border-black/25 drop-shadow-lg shadow-lg rounded-lg  p-6 ">
-                    <img class="rounded-md hover:scale-110 duration-300 transition"
-                        src="./assets/images/project_legal-solution.png" alt="">
-                    <h2 class="text-xl font-bold mt-4">Legal Solution</h2>
-                    <p class="text-base mt-2">Legal Solution delivers clear, reliable, and accessible legal support for
-                        individuals and businesses.</p>
-                    <a class="btn bg-btn_main rounded-full px-7 text-base mt-3" href="#">Live</a>
+                <!-- Project Card 5 -->
+                <div class="project-card bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl group"
+                    data-category="html">
+                    <div class="relative overflow-hidden h-64">
+                        <img class="project-image w-full h-full object-contain bg-gray-50"
+                            src="./assets/images/project_legal-solution.png" alt="Legal Solution">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4">
+                            <a href="#" target="_blank"
+                                class="btn btn-sm bg-white text-gray-900 border-none hover:bg-primary hover:text-white transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                <i class="fa-solid fa-eye mr-2"></i>Live Demo
+                            </a>
+                            <a href="#"
+                                class="btn btn-sm bg-gray-800 text-white border-none hover:bg-gray-900 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                <i class="fa-brands fa-github mr-2"></i>View Code
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Legal Solution</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">Legal Solution delivers clear, reliable, and
+                            accessible legal support for individuals and businesses.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-orange-50 text-orange-600 rounded-full text-xs font-semibold">HTML</span>
+                            <span
+                                class="px-3 py-1 bg-orange-50 text-orange-600 rounded-full text-xs font-semibold">Tailwind</span>
+                            <span
+                                class="px-3 py-1 bg-orange-50 text-orange-600 rounded-full text-xs font-semibold">DaisyUI</span>
+                        </div>
+                    </div>
                 </div>
 
             </div>
+        </section>
 
+        <!-- CTA Section -->
+        <section class="py-16 bg-gradient-to-r from-primary to-accent -mx-4 lg:-mx-8 px-4 lg:px-8 rounded-3xl mb-20">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl lg:text-5xl font-bold text-white mb-6">
+                    Have a Project in Mind?
+                </h2>
+                <p class="text-lg text-blue-100 mb-8">
+                    Let's collaborate and bring your ideas to life with modern web technologies!
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="index.html#contact"
+                        class="btn bg-white text-primary hover:bg-gray-100 border-none rounded-full px-8 shadow-lg font-semibold">
+                        <i class="fa-solid fa-paper-plane mr-2"></i>Get In Touch
+                    </a>
+                    <a href="index.html"
+                        class="btn bg-transparent text-white border-2 border-white hover:bg-white hover:text-primary rounded-full px-8 font-semibold">
+                        <i class="fa-solid fa-house mr-2"></i>Back to Home
+                    </a>
+                </div>
+            </div>
+        </section>
 
-        </div>
     </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-center md:text-left">
+                    <h2 class="text-2xl font-bold">Shakij<span class="text-primary">.dev</span></h2>
+                    <p class="text-gray-400 mt-2">Building digital experiences that matter.</p>
+                </div>
+                <div class="flex gap-6">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"><i
+                            class="fa-brands fa-twitter"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"><i
+                            class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors"><i
+                            class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 Shakij Mahamud. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filter === 'all') {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        if (card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'scale(1)';
+                            }, 10);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'scale(0.9)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    }
+                });
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.querySelector('input[type="search"]');
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+
+            projectCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, 10);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.9)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    </script>
 
 </body>
 
